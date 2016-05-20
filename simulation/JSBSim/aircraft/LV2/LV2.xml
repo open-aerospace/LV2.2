@@ -98,7 +98,7 @@
                 <product>
                     <property>aero/qbar-psf</property>
                     <property>metrics/Sw-sqft</property>
-                    <value>0.8</value>
+                    <value>0.6</value>
                 </product>
             </function>
         </axis>
