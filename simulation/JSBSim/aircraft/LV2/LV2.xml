@@ -89,19 +89,39 @@
     </propulsion>
 
     <!--########################################################################
-    Aero, right now a constant Coef. of drag of 0.8
+    Aero Properties. Mach table taken from OpenRocket
     #########################################################################-->
     <aerodynamics>
-        <axis name="DRAG">
-            <function name="aero/coefficient/CD">
-                <description>Drag</description>
-                <product>
-                    <property>aero/qbar-psf</property>
-                    <property>metrics/Sw-sqft</property>
-                    <value>0.6</value>
-                </product>
-            </function>
-        </axis>
+
+      <axis name="DRAG">
+        <function name="aero/force/drag">
+          <description>Drag_minimum</description>
+          <product>
+            <property>aero/qbar-psf</property>
+            <property>metrics/Sw-sqft</property>
+            <table name="aero/coefficient/CD_min">
+              <independentVar>velocities/mach</independentVar>
+              <tableData>
+                0.010   0.699865
+                0.100   0.579299
+                0.200   0.580362
+                0.300   0.586504
+                0.500   0.606208
+                0.600   0.619801
+                0.700   0.635912
+                0.800   0.654567
+                0.900   0.675792
+                1.000   0.688266
+                1.100   0.722610
+                1.200   0.657679
+                1.300   0.595412
+                1.400   0.572275
+              </tableData>
+            </table>
+          </product>
+        </function>
+      </axis>
+
     </aerodynamics>
 
 
